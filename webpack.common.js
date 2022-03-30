@@ -27,7 +27,18 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.m?js$/,
+				exclude: /(node_modules|bower_components|core-js|webpack\/buildin)/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env']
+					}
+				}
+			},			
+			{
 				test: /\.(scss|css)$/,
+				exclude: /(node_modules)/,
 				use: [
 					MiniCssExtractPlugin.loader,
 					'css-loader',
