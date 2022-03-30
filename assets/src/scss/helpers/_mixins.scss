@@ -57,8 +57,7 @@
 
 // Clearfix
 @mixin clearfix($selector) {
-	#{$selector}:before,
-	#{$selector}:after {
+	#{$selector}:before, #{$selector}:after {
 		content: '';
 		display: table;
 	}
@@ -73,6 +72,25 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+// PX to EM/REM conversion
+// From https://css-tricks.com/snippets/sass/px-to-em-functions
+@function em($pixels, $unit: em, $context: 16px) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	$multiplier: 1em;
+	@if ($unit == 'rem') {
+		$multiplier: 1rem;
+	}
+
+	@return calc($pixels / $context) * $multiplier;
 }
 
 // Set flex property
@@ -94,7 +112,7 @@
 @mixin flex-direction($direction) {
 	-webkit-flex-direction: $direction;
 	-ms-flex-direction: $direction;
-	flex-direction: $direction;
+	flex-direction: $direction;	
 }
 
 // Flex wrap (for overrides)
@@ -102,7 +120,7 @@
 	-webkit-box-flex-wrap: $wrap;
 	-webkit-flex-wrap: $wrap;
 	-ms-flex-wrap: $wrap;
-	flex-wrap: $wrap;
+	flex-wrap: $wrap;	
 }
 
 // Flex layout
@@ -193,124 +211,28 @@
 // Gradient - three stripes
 @mixin gradient-three($fb, $c1, $c2, $c3) {
 	background-color: $fb;
-	background-image: -webkit-linear-gradient(
-		$c1 33.33%,
-		$c2 33.33%,
-		$c2 66.66%,
-		$c3 66.66%,
-		$c3
-	);
-	background-image: -moz-linear-gradient(
-		$c1 33.33%,
-		$c2 33.33%,
-		$c2 66.66%,
-		$c3 66.66%,
-		$c3
-	);
-	background-image: -o-linear-gradient(
-		$c1 33.33%,
-		$c2 33.33%,
-		$c2 66.66%,
-		$c3 66.66%,
-		$c3
-	);
-	background-image: linear-gradient(
-		$c1 33.33%,
-		$c2 33.33%,
-		$c2 66.66%,
-		$c3 66.66%,
-		$c3
-	);
+	background-image: -webkit-linear-gradient($c1 33.33%, $c2 33.33%, $c2 66.66%, $c3 66.66%, $c3);
+	background-image: -moz-linear-gradient($c1 33.33%, $c2 33.33%, $c2 66.66%, $c3 66.66%, $c3);
+	background-image: -o-linear-gradient($c1 33.33%, $c2 33.33%, $c2 66.66%, $c3 66.66%, $c3);
+	background-image: linear-gradient($c1 33.33%, $c2 33.33%, $c2 66.66%, $c3 66.66%, $c3);
 }
 
 // Gradient - four stripes
 @mixin gradient-four($fb, $c1, $c2, $c3, $c4) {
 	background-color: $fb;
-	background-image: -webkit-linear-gradient(
-		$c1 25%,
-		$c2 25%,
-		$c2 50%,
-		$c3 50%,
-		$c3 75%,
-		$c4 75%,
-		$c4
-	);
-	background-image: -moz-linear-gradient(
-		$c1 25%,
-		$c2 25%,
-		$c2 50%,
-		$c3 50%,
-		$c3 75%,
-		$c4 75%,
-		$c4
-	);
-	background-image: -o-linear-gradient(
-		$c1 25%,
-		$c2 25%,
-		$c2 50%,
-		$c3 50%,
-		$c3 75%,
-		$c4 75%,
-		$c4
-	);
-	background-image: linear-gradient(
-		$c1 25%,
-		$c2 25%,
-		$c2 50%,
-		$c3 50%,
-		$c3 75%,
-		$c4 75%,
-		$c4
-	);
+	background-image: -webkit-linear-gradient($c1 25%, $c2 25%, $c2 50%, $c3 50%, $c3 75%, $c4 75%, $c4);
+	background-image: -moz-linear-gradient($c1 25%, $c2 25%, $c2 50%, $c3 50%, $c3 75%, $c4 75%, $c4);
+	background-image: -o-linear-gradient($c1 25%, $c2 25%, $c2 50%, $c3 50%, $c3 75%, $c4 75%, $c4);
+	background-image: linear-gradient($c1 25%, $c2 25%, $c2 50%, $c3 50%, $c3 75%, $c4 75%, $c4);
 }
 
 // Gradient - five stripes
 @mixin gradient-five($fb, $c1, $c2, $c3, $c4, $c5) {
 	background-color: $fb;
-	background-image: -webkit-linear-gradient(
-		$c1 20%,
-		$c2 20%,
-		$c2 40%,
-		$c3 40%,
-		$c3 60%,
-		$c4 60%,
-		$c4 80%,
-		$c5 80%,
-		$c5
-	);
-	background-image: -moz-linear-gradient(
-		$c1 20%,
-		$c2 20%,
-		$c2 40%,
-		$c3 40%,
-		$c3 60%,
-		$c4 60%,
-		$c4 80%,
-		$c5 80%,
-		$c5
-	);
-	background-image: -o-linear-gradient(
-		$c1 20%,
-		$c2 20%,
-		$c2 40%,
-		$c3 40%,
-		$c3 60%,
-		$c4 60%,
-		$c4 80%,
-		$c5 80%,
-		$c5
-	);
-	background-image: linear-gradient(
-		$c1 20%,
-		$c2 20%,
-		$c2 40%,
-		$c3 40%,
-		$c3 60%,
-		$c4 60%,
-		$c4 80%,
-		$c5 80%,
-		$c5
-	);
+	background-image: -webkit-linear-gradient($c1 20%, $c2 20%, $c2 40%, $c3 40%, $c3 60%, $c4 60%, $c4 80%, $c5 80%, $c5);
+	background-image: -moz-linear-gradient($c1 20%, $c2 20%, $c2 40%, $c3 40%, $c3 60%, $c4 60%, $c4 80%, $c5 80%, $c5);
+	background-image: -o-linear-gradient($c1 20%, $c2 20%, $c2 40%, $c3 40%, $c3 60%, $c4 60%, $c4 80%, $c5 80%, $c5);
+	background-image: linear-gradient($c1 20%, $c2 20%, $c2 40%, $c3 40%, $c3 60%, $c4 60%, $c4 80%, $c5 80%, $c5);
 }
 
 // Inline block with vertical alignment
@@ -333,41 +255,20 @@
 
 // Image centered position properties
 @mixin image-centered {
-	@include position(
-		$type: absolute,
-		$top: 0,
-		$bottom: 0,
-		$right: 0,
-		$left: 0
-	);
+	@include position($type: absolute, $top: 0, $bottom: 0, $right: 0, $left: 0);
 }
 
 // Placeholder
 // Examples: @include placeholder {}, :focus{@include placeholder {}}, or input {@include placeholder {}}
 @mixin placeholder {
-	&::-webkit-input-placeholder {
-		@content;
-	}
-	&:-moz-placeholder {
-		@content;
-	}
-	&::-moz-placeholder {
-		@content;
-	}
-	&:-ms-input-placeholder {
-		@content;
-	}
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}
 }
 
 // Mixin for positioning
-@mixin position(
-	$type: '',
-	$top: '',
-	$bottom: '',
-	$left: '',
-	$right: '',
-	$z: ''
-) {
+@mixin position($type: '', $top: '', $bottom: '', $left: '', $right: '', $z: '') {
 	@if ($type != '') {
 		position: $type;
 	}
@@ -390,28 +291,7 @@
 
 // Responsive px breakpoint, pass in a pixel value
 @mixin respond($breakpoint) {
-	@if index(
-			'px'
-				'cm'
-				'mm'
-				'in'
-				'pt'
-				'pc'
-				'dpi'
-				'dpcm'
-				'dppx'
-				'em'
-				'ex'
-				'rem'
-				'%'
-				'vw'
-				'vh'
-				'vmin'
-				'vmax',
-			unit($breakpoint)
-		) ==
-		null
-	{
+	@if index('px' 'cm' 'mm' 'in' 'pt' 'pc' 'dpi' 'dpcm' 'dppx' 'em' 'ex' 'rem' '%' 'vw' 'vh' 'vmin' 'vmax', unit($breakpoint)) == null {
 		$breakpoint: $breakpoint + 'px';
 	}
 	@media only screen and (max-width: $breakpoint) {
@@ -421,28 +301,7 @@
 
 // Responsive px breakpoint, pass in a pixel value
 @mixin respond-min($breakpoint) {
-	@if index(
-			'px'
-				'cm'
-				'mm'
-				'in'
-				'pt'
-				'pc'
-				'dpi'
-				'dpcm'
-				'dppx'
-				'em'
-				'ex'
-				'rem'
-				'%'
-				'vw'
-				'vh'
-				'vmin'
-				'vmax',
-			unit($breakpoint)
-		) ==
-		null
-	{
+	@if index('px' 'cm' 'mm' 'in' 'pt' 'pc' 'dpi' 'dpcm' 'dppx' 'em' 'ex' 'rem' '%' 'vw' 'vh' 'vmin' 'vmax', unit($breakpoint)) == null {
 		$breakpoint: $breakpoint + 'px';
 	}
 	@media only screen and (min-width: $breakpoint) {
@@ -482,6 +341,21 @@
 	margin: -1px;
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
+}
+
+// For hiding / showing content
+@mixin toggle-content($state, $transition: '') {
+	@if $state == hide {
+		opacity: 0;
+		visibility: hidden;
+	}
+	@if $state == show {
+		visibility: visible;
+		opacity: 1;
+	}
+	@if ($transition == true) {
+		@include transition(opacity 0.5s ease);
+	}
 }
 
 // Transform
