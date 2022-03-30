@@ -14,8 +14,10 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.4.0",    
+    "eslint-plugin-react-hooks": "^4.4.0",
     "file-loader": "^6.2.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "mini-css-extract-plugin": "^2.6.0",
     "prettier": "^2.6.1",
     "sass": "^1.49.9",
@@ -31,9 +33,10 @@
   "scripts": {
     "dev": "webpack serve --open --config webpack.dev.js",
     "prod": "webpack --config webpack.prod.js",
-		"format": "prettier --write \"assets/**/**/*.{js,jsx}\"",
-		"lint": "eslint \"assets/**/**/*.{js,jsx}\" --quiet",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"./assets/src/js/*.{js,jsx}\"",
+    "lint": "eslint \"./assets/src/js/*.{js,jsx}\" --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -45,7 +48,13 @@
     "url": "https://github.com/displaycoffee/base/issues"
   },
   "homepage": "https://github.com/displaycoffee/base#readme",
-	"browserslist": [
-		"last 2 Chrome versions"
-	]
+  "lint-staged": {
+    "./assets/src/js/*.{js,jsx}": [
+      "eslint --quiet",     
+      "prettier --write"
+    ]
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
 }
