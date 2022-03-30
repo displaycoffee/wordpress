@@ -50,8 +50,8 @@
   "homepage": "https://github.com/displaycoffee/base#readme",
   "lint-staged": {
     "./assets/src/js/*.{js,jsx}": [
-      "prettier --write",
-      "eslint --quiet"
+      "eslint --quiet",     
+      "prettier --write"
     ]
   },
   "browserslist": [
