@@ -49,7 +49,7 @@
   },
   "homepage": "https://github.com/displaycoffee/base#readme",
   "lint-staged": {
-    "./assets/src/js/*.{js,jsx}": [
+    "assets/src/js/*.{js,jsx}": [
       "eslint --quiet",     
       "prettier --write"
     ]
