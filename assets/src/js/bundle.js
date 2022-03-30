@@ -1,1 +1,1 @@
-console.log('code aaa js');
+console.log('from bundle.js');
