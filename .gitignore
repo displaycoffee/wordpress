@@ -1,5 +1,5 @@
-# ignore node_modules
+# Node_modules
 node_modules
 
-# ignore husky
+# Husky
 .husky

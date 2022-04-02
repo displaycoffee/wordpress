@@ -1,7 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const webpConfig = {
+// Path config
+const webpPathConfig = {
 	path : path.resolve(__dirname),
 	src : {
 		js : './assets/src/js/bundle.js',
@@ -13,15 +14,17 @@ const webpConfig = {
 	}	
 };
 
-module.exports = {
-	entry: [webpConfig.src.js, webpConfig.src.css],
+// Common config
+const webpCommonConfig = {
+	entry: [webpPathConfig.src.js, webpPathConfig.src.css],
 	output: {
-		filename: webpConfig.dist.js,
-		path: webpConfig.path
+		filename: webpPathConfig.dist.js,
+		path: webpPathConfig.path,
+		assetModuleFilename: './assets/src/images/[name].[ext]'
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: webpConfig.dist.css
+			filename: webpPathConfig.dist.css
 		})
 	],
 	module: {
@@ -44,7 +47,9 @@ module.exports = {
 					'css-loader',
 					'sass-loader'
 				],
-			},
+			}
 		],
 	}	
 };
+
+module.exports = webpCommonConfig;

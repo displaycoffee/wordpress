@@ -375,3 +375,10 @@
 	-o-transition: $value;
 	transition: $value;
 }
+
+// Unicode mixin
+// Mostly for making sure icons output correctly
+// https://github.com/sass/sass/issues/1395#issuecomment-65548751
+@function unicode($str) {
+	@return unquote("\'") + $str + unquote("\'");
+}

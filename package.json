@@ -15,7 +15,6 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
-    "file-loader": "^6.2.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "mini-css-extract-plugin": "^2.6.0",
@@ -31,7 +30,7 @@
     "react-dom": "^18.0.0"
   },
   "scripts": {
-    "dev": "webpack serve --open --config webpack.dev.js",
+    "dev": "webpack serve --config webpack.dev.js",
     "prod": "webpack --config webpack.prod.js",
     "format": "prettier --write \"./assets/src/js/*.{js,jsx}\"",
     "lint": "eslint \"./assets/src/js/*.{js,jsx}\" --quiet",
