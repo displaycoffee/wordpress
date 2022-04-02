@@ -19,8 +19,7 @@ const webpCommonConfig = {
 	entry: [webpPathConfig.src.js, webpPathConfig.src.css],
 	output: {
 		filename: webpPathConfig.dist.js,
-		path: webpPathConfig.path,
-		assetModuleFilename: './assets/src/images/[name].[ext]'
+		path: webpPathConfig.path
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
