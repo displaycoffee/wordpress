@@ -1,27 +1,19 @@
 const { merge } = require('webpack-merge');
 const webpCommonConfig = require('./webpack.common.js');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 // Dev config
 const webpDevConfig = {
-	mode: 'development',
-	devServer: {
-		static: {
-			directory: webpCommonConfig.output.path
-		},
-		compress: true,
-		port: 3333
-	}
+	mode: 'development'
 };
 
-// Determine if a proxy needs to be added (mostly for tieing into wamp server)
-const addProxy = false;
-if (addProxy) {
-	webpDevConfig.devServer.proxy = {
-		'/': {
-			target: 'http://localhost/base',
-			changeOrigin: true
-		},
-	};
-}
+// Add browserstack for dev testing 
+webpCommonConfig.plugins.push(
+	new BrowserSyncPlugin({
+		host: 'localhost',
+		port: 3333,
+		proxy: 'http://localhost/wordpress'
+	})
+);
 
 module.exports = merge(webpCommonConfig, webpDevConfig);
