@@ -48,7 +48,12 @@ const webpCommonConfig = {
 				exclude: /(node_modules)/,
 				use: [
 					MiniCssExtractPlugin.loader,
-					'css-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							url: false
+						}
+					},
 					'sass-loader'
 				]
 			},
