@@ -12,8 +12,8 @@ webpCommonConfig.plugins.push(
 	new BrowserSyncPlugin({
 		host: 'localhost',
 		port: 3333,
-		proxy: 'http://localhost/wordpress',
-		files: ['wp-content/themes/**/*.php']
+		files: ['wp-content/themes/**/*.php'],
+		proxy: 'http://localhost/wordpress'
 	})
 );
 
