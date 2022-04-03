@@ -12,10 +12,7 @@ webpCommonConfig.plugins.push(
 	new BrowserSyncPlugin({
 		host: 'localhost',
 		port: 3333,
-		files: ['*.html'],
-		server: { 
-			baseDir: [webpCommonConfig.output.path] 
-		}
+		proxy: 'http://localhost/wordpress'
 	})
 );
 
