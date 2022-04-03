@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Path config
-const themePath = './assets/';
+const themePath = './wp-content/themes/dcbase/assets/';
 const webpPathConfig = {
 	path : path.resolve(__dirname),
 	src : {
@@ -13,9 +13,9 @@ const webpPathConfig = {
 	},
 	dist : {
 		js : themePath + 'dist/js/bundle.js',
-		css : themePath + 'dist/css/styles.css'	,
+		css : themePath + 'dist/css/styles.css',
 		fonts : themePath + 'dist/fonts/[name][ext]',
-		images : themePath + 'dist/images/[name][ext]'
+		images : themePath + 'dist/images/[name][ext]'	
 	}	
 };
 
@@ -48,9 +48,14 @@ const webpCommonConfig = {
 				exclude: /(node_modules)/,
 				use: [
 					MiniCssExtractPlugin.loader,
-					'css-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							url: false
+						}
+					},
 					'sass-loader'
-				],
+				]
 			},
 			{
 				test: /\.(woff(2)?|ttf)$/,
