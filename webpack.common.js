@@ -2,15 +2,20 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Path config
+const themePath = './wp-content/themes/dcbase/assets/';
 const webpPathConfig = {
 	path : path.resolve(__dirname),
 	src : {
-		js : './assets/src/js/bundle.js',
-		css : './assets/src/scss/styles.scss'
+		js : themePath + 'src/js/bundle.js',
+		css : themePath + 'src/scss/styles.scss',
+		fonts : themePath + 'src/fonts/[name][ext]',
+		images : themePath + 'src/images/[name][ext]'
 	},
 	dist : {
-		js : './assets/dist/js/bundle.js',
-		css : './assets/dist/css/styles.css'	
+		js : themePath + 'dist/js/bundle.js',
+		css : themePath + 'dist/css/styles.css',
+		fonts : themePath + 'dist/fonts/[name][ext]',
+		images : themePath + 'dist/images/[name][ext]'	
 	}	
 };
 
@@ -45,7 +50,21 @@ const webpCommonConfig = {
 					MiniCssExtractPlugin.loader,
 					'css-loader',
 					'sass-loader'
-				],
+				]
+			},
+			{
+				test: /\.(woff(2)?|ttf)$/,
+				type: 'asset/resource',
+				generator: {
+					filename: webpPathConfig.dist.fonts
+				}
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg|webmanifest)$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: webpPathConfig.dist.images
+				}
 			}
 		],
 	}	
