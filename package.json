@@ -1,8 +1,8 @@
 {
-  "name": "base",
+  "name": "wordpress",
   "sideEffects": true,
   "version": "1.0.0",
-  "description": "custom base setup",
+  "description": "custom wordpress setup",
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -32,23 +32,23 @@
   "scripts": {
     "dev": "webpack --watch --config webpack.dev.js",
     "prod": "webpack --config webpack.prod.js",
-    "format": "prettier --write \"./assets/src/js/*.{js,jsx}\"",
-    "lint": "eslint \"./assets/src/js/*.{js,jsx}\" --quiet",
+    "format": "prettier --write \"./wp-content/themes/dcbase/assets/src/js/*.{js,jsx}\"",
+    "lint": "eslint \"./wp-content/themes/dcbase/assets/src/js/*.{js,jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/displaycoffee/base.git"
+    "url": "git+https://github.com/displaycoffee/wordpress.git"
   },
   "author": "displaycoffee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/displaycoffee/base/issues"
+    "url": "https://github.com/displaycoffee/wordpress/issues"
   },
-  "homepage": "https://github.com/displaycoffee/base#readme",
+  "homepage": "https://github.com/displaycoffee/wordpress#readme",
   "lint-staged": {
-    "./assets/src/js/*.{js,jsx}": [
+    "./wp-content/themes/dcbase/assets/src/js/*.{js,jsx}": [
       "eslint --quiet",     
       "prettier --write"
     ]
