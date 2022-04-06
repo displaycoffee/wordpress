@@ -1,9 +1,15 @@
-<aside id="sidebar" role="complementary">
-<?php if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
-<div id="primary" class="widget-area">
-<ul class="xoxo">
-<?php dynamic_sidebar( 'primary-widget-area' ); ?>
-</ul>
-</div>
-<?php endif; ?>
+<?php
+	/**
+	* Template for displaying sidebar
+	*/
+
+	// Exit if accessed directly
+	if ( !defined( 'ABSPATH' ) ) { exit; }
+?>
+<aside id="sidebar" class="flex-column">
+	<?php if ( is_active_sidebar( 'default-widgets' ) ) : ?>
+		<div id="default-widgets" class="widgets">
+			<?php dynamic_sidebar( 'default-widgets' ); ?>
+		</div>
+	<?php endif; ?>
 </aside>

@@ -72,7 +72,7 @@
 	add_action( 'widgets_init', function() use ( $config ) { dcbase_widgets_init( $config ); } );
 
 	// Enable shortcodes in text widgets
-	add_filter( 'widget_text', 'do_shortcode' );
+	//add_filter( 'widget_text', 'do_shortcode' );
 ?>
 <?php
 // add_filter( 'document_title_separator', 'dcbase_document_title_separator' );

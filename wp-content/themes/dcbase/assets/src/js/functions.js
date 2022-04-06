@@ -1,24 +1,24 @@
-import { obj, inString } from './global-functions';
+import { theme } from './theme';
 
 // Add browser class to html tag
-export function addBrowserClass() {
-	var deviceAgent = navigator.userAgent.toLowerCase();
-	var htmlSelector = jQuery( 'html' );
+export const addBrowserClass = () => {
+	const deviceAgent = navigator.userAgent.toLowerCase();
+	const htmlSelector = document.querySelector( 'html' );
 
 	if ( deviceAgent.match( /(iphone|ipod|ipad)/ ) ) {
-		htmlSelector.addClass( obj['prefix'] + '-ios mobile' );
+		htmlSelector.classList.add( theme.prefix + '-ios mobile' );
 	}
 
-	if ( inString( deviceAgent, 'msie' ) ) {
-		htmlSelector.addClass( obj['prefix'] + '-ie' );
-	} else if ( inString( deviceAgent, 'chrome' ) ) {
-		htmlSelector.addClass( obj['prefix'] + '-chrome' );
-	} else if ( inString( deviceAgent, 'firefox' ) ) {
-		htmlSelector.addClass( obj['prefix'] + '-firefox' );
-	} else if ( inString( deviceAgent, 'safari' ) && deviceAgent.search( 'chrome' ) < 0 ) {
-		htmlSelector.addClass( obj['prefix'] + '-safari' );
-	} else if ( inString( deviceAgent, 'opera' ) ) {
-		htmlSelector.addClass( obj['prefix'] + '-opera' );
+	if ( deviceAgent.includes( 'msie' ) ) {
+		htmlSelector.classList.add( theme.prefix + '-ie' );
+	} else if ( deviceAgent.includes( 'chrome' ) ) {
+		htmlSelector.classList.add( theme.prefix + '-chrome' );
+	} else if ( deviceAgent.includes( 'firefox' ) ) {
+		htmlSelector.classList.add( theme.prefix + '-firefox' );
+	} else if ( deviceAgent.includes( 'safari' ) && deviceAgent.search( 'chrome' ) < 0 ) {
+		htmlSelector.classList.add( theme.prefix + '-safari' );
+	} else if ( deviceAgent.includes( 'opera' ) ) {
+		htmlSelector.classList.add( theme.prefix + '-opera' );
 	}
 }
 
@@ -151,7 +151,7 @@ export function addWidgetContainer() {
 // 	// Resize actions for mobile menu
 // 	function mobileResizeAction() {
 // 		// Check if we are on mobile
-// 		config.menu.isMobile = isMobile( config.menu.width / obj.variables.fontSize );
+// 		config.menu.isMobile = isMobile( config.menu.width / theme.variables.fontSize );
 //
 // 		// Check all sorts of window and document widths to make sure resizing is consistent across browsers
 // 		if ( config.menu.isMobile ) {

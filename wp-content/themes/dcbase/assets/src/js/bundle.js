@@ -1,8 +1,10 @@
-import { addBrowserClass, addWidgetContainer } from './jquery-functions';
+import { addBrowserClass, addWidgetContainer } from './functions';
+
+addBrowserClass();
 
 // Run all jquery functions on document ready
 jQuery( document ).ready( function( $ ) {
-	addBrowserClass();
+	
 	addWidgetContainer();
 	//
 	// // Start navigation dropdown menus
