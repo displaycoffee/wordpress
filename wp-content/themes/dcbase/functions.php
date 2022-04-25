@@ -71,6 +71,24 @@
 	}
 	add_action( 'widgets_init', function() use ( $config ) { dcbase_widgets_init( $config ); } );
 
+	// function filter_allowed_block_types_when_post_provided( $allowed_block_types, $editor_context ) {
+	// 	if ( ! empty( $editor_context->post ) ) {
+	// 		return array( 'core/paragraph', 'core/heading' );
+	// 	}
+	// 	return $allowed_block_types;
+	// }
+	 
+	// add_filter( 'allowed_block_types_all', 'filter_allowed_block_types_when_post_provided', 10, 2 );
+
+	// function my_plugin_deny_list_blocks( $config ) {
+	// 	wp_enqueue_script(
+	// 		'my-plugin-deny-list-blocks',
+	// 		$config->paths->js . '/my-plugin.js',
+	// 		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' )
+	// 	);
+	// }
+	// add_action( 'enqueue_block_editor_assets', function() use ( $config ) { my_plugin_deny_list_blocks( $config ); } );
+
 	// Enable shortcodes in text widgets
 	//add_filter( 'widget_text', 'do_shortcode' );
 ?>
