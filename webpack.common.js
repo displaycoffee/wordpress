@@ -33,15 +33,16 @@ const webpCommonConfig = {
 	],
 	module: {
 		rules: [
+			{ 
+				test: /\.txt$/, 
+				use: 'raw-loader' 
+			},
 			{
-				test: /\.m?js$/,
-				exclude: /(node_modules|bower_components|core-js|webpack\/buildin)/,
+				test: /\.(js|jsx)$/,
+				exclude: /(node_modules|bower_components)/,
 				use: {
 					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/preset-env']
-					}
-				}
+				},
 			},			
 			{
 				test: /\.(scss|css)$/,
@@ -51,28 +52,31 @@ const webpCommonConfig = {
 					{
 						loader: 'css-loader',
 						options: {
-							url: false
-						}
+							url: false,
+						},
 					},
-					'sass-loader'
-				]
+					'sass-loader',
+				],
 			},
 			{
 				test: /\.(woff(2)?|ttf)$/,
 				type: 'asset/resource',
 				generator: {
-					filename: webpPathConfig.dist.fonts
-				}
+					filename: webpPathConfig.dist.fonts,
+				},
 			},
 			{
 				test: /\.(png|jpe?g|gif|svg|webmanifest)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: webpPathConfig.dist.images
-				}
+					filename: webpPathConfig.dist.images,
+				},
 			}
 		]
-	}	
+	},
+	resolve: {
+		extensions: ['.js', '.jsx'],
+	},	
 };
 
 module.exports = webpCommonConfig;
