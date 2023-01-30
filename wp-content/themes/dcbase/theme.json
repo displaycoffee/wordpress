@@ -1,0 +1,16 @@
+{
+	"version": 2,
+	"settings": {
+		"appearanceTools": true,
+		"color": {},
+		"layout": {},
+        "typography": {} 
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		}
+	]
+}

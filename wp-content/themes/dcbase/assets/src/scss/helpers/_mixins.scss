@@ -1,5 +1,5 @@
 // Animate
-// Example for $value: ss-spin 2s infinite linear
+// Example for $value: animate-spin 2s infinite linear
 @mixin animate($value) {
 	-webkit-animation: $value;
 	-moz-animation: $value;
@@ -11,7 +11,7 @@
 // Animate - Spin
 // Example: use when animating icons with the animate mixin
 @mixin animate-spin {
-	@keyframes ss-spin {
+	@keyframes animate-spin {
 		0% {
 			@include transform(rotate(0deg));
 		}
@@ -345,16 +345,20 @@
 
 // For hiding / showing content
 @mixin toggle-content($state, $transition: '') {
-	@if $state == hide {
+	@if $state == collapsed {
 		opacity: 0;
 		visibility: hidden;
+		@include transform(scaleY(0));
 	}
-	@if $state == show {
+	@if $state == expanded {
 		visibility: visible;
 		opacity: 1;
+		@include transform(scaleY(1));
+		transform-origin: top; 
 	}
 	@if ($transition == true) {
-		@include transition(opacity 0.5s ease);
+		$transform-props: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+		@include transition($transform-props);
 	}
 }
 

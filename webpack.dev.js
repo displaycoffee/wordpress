@@ -1,7 +1,6 @@
 const { merge } = require('webpack-merge');
 const webpCommonConfig = require('./webpack.common.js');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const historyApiFallback = require('connect-history-api-fallback');
 
 // Dev config
 const webpDevConfig = {
@@ -13,12 +12,8 @@ webpCommonConfig.plugins.push(
 	new BrowserSyncPlugin({
 		host: 'localhost',
 		port: 3333,
-		files: ['wp-content/themes/**/*.php'],
-		proxy: 'http://localhost/wordpress',
-		server: {
-			baseDir: webpCommonConfig.output.path,
-			middleware: [historyApiFallback()],
-		},
+		files: ['wp-content/themes/**/*.php', 'wp-content/themes/**/*.html'],
+		proxy: 'http://localhost/wordpress'
 	})
 );
 

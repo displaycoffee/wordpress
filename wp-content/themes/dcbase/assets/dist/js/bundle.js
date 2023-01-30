@@ -6,37 +6,16 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-/******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
+/******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./wp-content/themes/dcbase/assets/src/js/bundle.js":
 /*!**********************************************************!*\
   !*** ./wp-content/themes/dcbase/assets/src/js/bundle.js ***!
   \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (function() {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions */ \"./wp-content/themes/dcbase/assets/src/js/functions.js\");\n\n(0,_functions__WEBPACK_IMPORTED_MODULE_0__.addBrowserClass)(); // Run all jquery functions on document ready\n\njQuery(document).ready(function ($) {\n  (0,_functions__WEBPACK_IMPORTED_MODULE_0__.addWidgetContainer)(); //\n  // // Start navigation dropdown menus\n  // initializeDropdownMenu({\n  // \tmain    : '.menu > .menu-item',\n  // \tlabel   : ' > a',\n  // \tcontent : ' > .sub-menu'\n  // });\n  //\n  // // Start the mobile menu\n  // initializeMobileMenu({\n  // \tmenu          : '.navigation-main .menu-primary-container > .menu',\n  // \tmenuContainer : '.navigation-main .menu-primary-container',\n  // \tmobileToggle  : '[data-toggle-mobile]',\n  // \tmobileMenu    : '.navigation-mobile',\n  // \tmobileContent : '.navigation-mobile-content',\n  // \twidth         : 768\n  // });\n});\n\n//# sourceURL=webpack://wordpress/./wp-content/themes/dcbase/assets/src/js/bundle.js?");
-
-/***/ }),
-
-/***/ "./wp-content/themes/dcbase/assets/src/js/functions.js":
-/*!*************************************************************!*\
-  !*** ./wp-content/themes/dcbase/assets/src/js/functions.js ***!
-  \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addBrowserClass\": () => (/* binding */ addBrowserClass),\n/* harmony export */   \"addWidgetContainer\": () => (/* binding */ addWidgetContainer)\n/* harmony export */ });\n/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./theme */ \"./wp-content/themes/dcbase/assets/src/js/theme.js\");\n // Add browser class to html tag\n\nconst addBrowserClass = () => {\n  const deviceAgent = navigator.userAgent.toLowerCase();\n  const htmlSelector = document.querySelector('html');\n\n  if (deviceAgent.match(/(iphone|ipod|ipad)/)) {\n    htmlSelector.classList.add(_theme__WEBPACK_IMPORTED_MODULE_0__.theme.prefix + '-ios mobile');\n  }\n\n  if (deviceAgent.includes('msie')) {\n    htmlSelector.classList.add(_theme__WEBPACK_IMPORTED_MODULE_0__.theme.prefix + '-ie');\n  } else if (deviceAgent.includes('chrome')) {\n    htmlSelector.classList.add(_theme__WEBPACK_IMPORTED_MODULE_0__.theme.prefix + '-chrome');\n  } else if (deviceAgent.includes('firefox')) {\n    htmlSelector.classList.add(_theme__WEBPACK_IMPORTED_MODULE_0__.theme.prefix + '-firefox');\n  } else if (deviceAgent.includes('safari') && deviceAgent.search('chrome') < 0) {\n    htmlSelector.classList.add(_theme__WEBPACK_IMPORTED_MODULE_0__.theme.prefix + '-safari');\n  } else if (deviceAgent.includes('opera')) {\n    htmlSelector.classList.add(_theme__WEBPACK_IMPORTED_MODULE_0__.theme.prefix + '-opera');\n  }\n}; // $(\".menu-icon\").on(\"click\", function () {\n// $(\"#menu\").toggleClass(\"toggled\");\n// });\n// $(\".menu-toggle\").on(\"keypress\", function(e) {\n// if(e.which == 13) {\n// $(\"#menu\").toggleClass(\"toggled\");\n// }\n// });\n// });\n//\n// Add widget-content container\n\nfunction addWidgetContainer() {\n  var widgets = jQuery('.widget');\n\n  if (widgets && widgets.length) {\n    widgets.each(function () {\n      var current = jQuery(this);\n      current.wrapInner('<div class=\"widget-content\"></div>'); // If there is a widget-title, move it above widget-content\n\n      var widgetTitle = current.find('.widget-title');\n\n      if (widgetTitle && widgetTitle.length) {\n        widgetTitle.prependTo(current);\n      }\n    });\n  }\n} // // Create dropdown toggles\n// function initializeDropdownMenu( config ) {\n// \tconfig = {\n// \t\tdropdown  : config,\n// \t\tclasses   : {\n// \t\t\tlabel   : 'dropdown-label',\n// \t\t\tcontent : 'dropdown-content',\n// \t\t\ttrigger : 'dropdown-trigger',\n// \t\t\thidden  : 'dropdown-hidden',\n// \t\t\tvisible : 'dropdown-visible'\n// \t\t},\n// \t\tselectors : {},\n// \t\thtml      : {}\n// \t};\n//\n// \t// Update object properties\n// \tconfig.selectors.main = jQuery( config.dropdown.main );\n// \tconfig.selectors.trigger = jQuery( '.' + config.classes.trigger );\n// \tconfig.html.label = '<div class=\"' + config.classes.label + '  flex-row-nowrap flex-row-center\"></div>';\n// \tconfig.html.trigger = '<button type=\"button\" class=\"button-link ' + config.classes.trigger + '\" role=\"button\"><span class=\"icon icon-angle-down\"></span></button>';\n//\n// \tif ( config.selectors.main && config.selectors.main.length ) {\n// \t\tconfig.selectors.main.each( function() {\n// \t\t\tvar current = jQuery( this );\n// \t\t\tcurrent.addClass( 'dropdown' );\n//\n// \t\t\t// Don't do any of the below if there is no dropdown content\n// \t\t\tvar dropdownContent = current.find( config.dropdown.content );\n//\n// \t\t\tif ( dropdownContent && dropdownContent.length ) {\n// \t\t\t\tdropdownContent.addClass( config.classes.content );\n//\n// \t\t\t\t// Wrap dropdown text and add trigger element\n// \t\t\t\tcurrent.find( config.dropdown.label ).wrap( config.html.label ).after( config.html.trigger );\n//\n// \t\t\t\t// Add dropdown trigger click\n// \t\t\t\tcurrent.find( '.' + config.classes.trigger ).off().on( 'click', function() {\n// \t\t\t\t\t// Toggle casses on dropdown content\n// \t\t\t\t\tif ( current.hasClass( config.classes.visible ) ) {\n// \t\t\t\t\t\tconfig.selectors.main.removeClass( config.classes.visible ).removeClass( config.classes.hidden );\n// \t\t\t\t\t} else {\n// \t\t\t\t\t\tconfig.selectors.main.removeClass( config.classes.visible ).addClass( config.classes.hidden );\n// \t\t\t\t\t\tcurrent.removeClass( config.classes.hidden ).addClass( config.classes.visible );\n// \t\t\t\t\t}\n// \t\t\t\t});\n// \t\t\t} else {\n// \t\t\t\t// Wrap dropdown text\n// \t\t\t\tcurrent.find( config.dropdown.label ).wrap( config.html.label );\n// \t\t\t}\n// \t\t});\n//\n// \t\t// If anything outside the dropdown trigger is clicked on, hide dropdown\n// \t\tjQuery( document ).off().on( 'click', function( event ) {\n// \t\t\tif ( !jQuery( event.target ).closest( config.dropdown.main ).length ) {\n// \t\t\t\tconfig.selectors.main.removeClass( config.classes.visible ).removeClass( config.classes.hidden );\n// \t\t\t}\n// \t\t});\n// \t}\n// }\n//\n// // Initialize Mobile Menu\n// function initializeMobileMenu( config ) {\n// \tconfig = {\n// \t\tmenu      : config,\n// \t\tclasses   : {\n// \t\t\thidden  : 'navigation-hidden',\n// \t\t\tvisible : 'navigation-visible'\n// \t\t},\n// \t\tselectors : {\n// \t\t\tbody : jQuery( 'body' )\n// \t\t}\n// \t};\n//\n// \t// Update object properties\n// \tconfig.selectors.menu = jQuery( config.menu.menu );\n// \tconfig.selectors.menuContainer = jQuery( config.menu.menuContainer );\n// \tconfig.selectors.mobileToggle = jQuery( config.menu.mobileToggle );\n// \tconfig.selectors.mobileMenu = jQuery( config.menu.mobileMenu );\n// \tconfig.selectors.mobileContent = jQuery( config.menu.mobileContent );\n//\n// \t// Set a mobile false state (for window resize mainly)\n// \tconfig.menu.once = false;\n//\n// \t// Create open / close function\n// \tfunction toggleMobileMenu() {\n// \t\tif ( config.selectors.body.hasClass( config.classes.visible ) ) {\n// \t\t\tconfig.selectors.body.removeClass( config.classes.visible );\n// \t\t} else {\n// \t\t\tconfig.selectors.body.addClass( config.classes.visible );\n// \t\t}\n// \t}\n//\n// \t// Add/remove classes when mobile menu button or overlay is clicked on\n// \tconfig.selectors.mobileToggle.off().on( 'click', function() {\n// \t\ttoggleMobileMenu();\n// \t});\n//\n// \t// Resize actions for mobile menu\n// \tfunction mobileResizeAction() {\n// \t\t// Check if we are on mobile\n// \t\tconfig.menu.isMobile = isMobile( config.menu.width / theme.variables.fontSize );\n//\n// \t\t// Check all sorts of window and document widths to make sure resizing is consistent across browsers\n// \t\tif ( config.menu.isMobile ) {\n// \t\t\t// Check if mobile ones is false, meaning we haven't activated the mobile menu yet\n// \t\t\tif ( !config.menu.once ) {\n// \t\t\t\t// Move menu to menu container\n// \t\t\t\tconfig.selectors.menu.detach().appendTo( config.selectors.mobileContent );\n//\n// \t\t\t\t// After everything has been done, set mobile to true so it's not run again on resize\n// \t\t\t\tconfig.menu.once = true;\n// \t\t\t}\n// \t\t} else {\n// \t\t\t// Check if mobile is true, meaning we're resizing and want to clean up on resize\n// \t\t\tif ( config.menu.once ) {\n// \t\t\t\t// Remove close button, replace menu, remove slide menu toggle, and remove any extra classes\n// \t\t\t\tconfig.selectors.menu.detach().appendTo( config.selectors.menuContainer );\n// \t\t\t\tconfig.selectors.body.removeClass( config.classes.visible );\n//\n// \t\t\t\t// Then set mobile to false again so we can start over\n// \t\t\t\tconfig.menu.once = false;\n// \t\t\t}\n// \t\t}\n// \t}\n//\n// \t// Call mobile menu once if browser is brought up or refreshed\n// \tmobileResizeAction();\n//\n// \t// Then run mobile menu on resizing using debounce\n// \tvar resizeMenuForMobile = debounce( function() {\n// \t\tmobileResizeAction();\n// \t}, 100 );\n// \twindow.addEventListener( 'resize', resizeMenuForMobile );\n// }\n\n//# sourceURL=webpack://wordpress/./wp-content/themes/dcbase/assets/src/js/functions.js?");
-
-/***/ }),
-
-/***/ "./wp-content/themes/dcbase/assets/src/js/theme.js":
-/*!*********************************************************!*\
-  !*** ./wp-content/themes/dcbase/assets/src/js/theme.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"obj\": () => (/* binding */ obj),\n/* harmony export */   \"theme\": () => (/* binding */ theme)\n/* harmony export */ });\nvar prefix = 'dcbase';\nvar obj = {\n  lang: 'dcbase',\n  prefix: prefix,\n  classes: {},\n  variables: {\n    bottom: document.body.scrollHeight + window.innerHeight,\n    fontSize: 16\n  }\n};\nlet theme = {\n  lang: 'dcbase',\n  prefix: prefix,\n  classes: {},\n  variables: {\n    bottom: document.body.scrollHeight + window.innerHeight,\n    fontSize: 16\n  },\n  isMobile: respond => {\n    // Check if on mobile\n    const windowWidth = window.innerWidth / undefined.variables.fontSize;\n    const docWidth = document.documentElement.clientWidth / undefined.variables.fontSize;\n    const bodyWidth = document.body.clientWidth / undefined.variables.fontSize;\n\n    if ((windowWidth || docWidth || bodyWidth) <= respond) {\n      return true;\n    } else {\n      return false;\n    }\n  },\n  debounce: (func, wait, immediate) => {\n    // Debounce function from underscore.js and https://davidwalsh.name/javascript-debounce-function\n    let timeout;\n    return function () {\n      const context = this;\n      const args = arguments;\n\n      let later = function () {\n        timeout = null;\n\n        if (!immediate) {\n          func.apply(context, args);\n        }\n      };\n\n      const callNow = immediate && !timeout;\n      clearTimeout(timeout);\n      timeout = setTimeout(later, wait);\n\n      if (callNow) {\n        func.apply(context, args);\n      }\n    };\n  }\n}; // // Check if substring is in string\n// export function inString( value, search ) {\n// \treturn ( value.indexOf(search) !== -1 ) ? true : false;\n// }\n// // Check for mobile\n// export function isMobile( respond ) {\n// \tvar windowWidth = ( window.innerWidth / obj.variables.fontSize );\n// \tvar docWidth = ( document.documentElement.clientWidth / obj.variables.fontSize );\n// \tvar bodyWidth = ( document.body.clientWidth / obj.variables.fontSize );\n// \tif ( ( windowWidth || docWidth || bodyWidth ) <= respond ) {\n// \t\treturn true;\n// \t} else {\n// \t\treturn false;\n// \t}\n// }\n// Debounce function from underscore.js and https://davidwalsh.name/javascript-debounce-function\n// export function debounce( func, wait, immediate ) {\n// \tvar timeout;\n// \treturn function() {\n// \t\tvar context = this, args = arguments;\n// \t\tvar later = function() {\n// \t\t\ttimeout = null;\n// \t\t\tif ( !immediate ) {\n// \t\t\t\tfunc.apply( context, args );\n// \t\t\t}\n// \t\t};\n// \t\tvar callNow = immediate && !timeout;\n// \t\tclearTimeout( timeout );\n// \t\ttimeout = setTimeout( later, wait );\n// \t\tif ( callNow ) {\n// \t\t\tfunc.apply( context, args );\n// \t\t}\n// \t};\n// };\n\n//# sourceURL=webpack://wordpress/./wp-content/themes/dcbase/assets/src/js/theme.js?");
+eval("throw new Error(\"Module build failed (from ../node_modules/babel-loader/lib/index.js):\\nSyntaxError: C:\\\\Users\\\\Adria\\\\Projects\\\\wordpress\\\\wp-content\\\\themes\\\\dcbase\\\\assets\\\\src\\\\js\\\\bundle.js: Support for the experimental syntax 'jsx' isn't currently enabled (10:17):\\n\\n\\u001b[0m \\u001b[90m  8 |\\u001b[39m \\u001b[36mconst\\u001b[39m baseApp \\u001b[33m=\\u001b[39m document\\u001b[33m.\\u001b[39mgetElementById(\\u001b[32m'base-app'\\u001b[39m)\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m  9 |\\u001b[39m \\u001b[36mconst\\u001b[39m baseRoot \\u001b[33m=\\u001b[39m createRoot(baseApp)\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m 10 |\\u001b[39m baseRoot\\u001b[33m.\\u001b[39mrender(\\u001b[33m<\\u001b[39m\\u001b[33mIndex\\u001b[39m \\u001b[33m/\\u001b[39m\\u001b[33m>\\u001b[39m)\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m    |\\u001b[39m                 \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 11 |\\u001b[39m\\u001b[0m\\n\\nAdd @babel/preset-react (https://github.com/babel/babel/tree/main/packages/babel-preset-react) to the 'presets' section of your Babel config to enable transformation.\\nIf you want to leave it as-is, add @babel/plugin-syntax-jsx (https://github.com/babel/babel/tree/main/packages/babel-plugin-syntax-jsx) to the 'plugins' section to enable parsing.\\n    at instantiate (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:72:32)\\n    at constructor (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:367:12)\\n    at Parser.raise (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:3706:19)\\n    at Parser.expectOnePlugin (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:3763:18)\\n    at Parser.parseExprAtom (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:13305:18)\\n    at Parser.parseExprSubscripts (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12875:23)\\n    at Parser.parseUpdate (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12854:21)\\n    at Parser.parseMaybeUnary (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12824:23)\\n    at Parser.parseMaybeUnaryOrPrivate (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12615:61)\\n    at Parser.parseExprOps (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12622:23)\\n    at Parser.parseMaybeConditional (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12592:23)\\n    at Parser.parseMaybeAssign (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12544:21)\\n    at C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12502:39\\n    at Parser.allowInAnd (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:14576:12)\\n    at Parser.parseMaybeAssignAllowIn (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12502:17)\\n    at Parser.parseExprListItem (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:14281:18)\\n    at Parser.parseCallExpressionArguments (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:13101:22)\\n    at Parser.parseCoverCallAndAsyncArrowHead (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12998:29)\\n    at Parser.parseSubscript (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12923:19)\\n    at Parser.parseSubscripts (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12892:19)\\n    at Parser.parseExprSubscripts (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12881:17)\\n    at Parser.parseUpdate (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12854:21)\\n    at Parser.parseMaybeUnary (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12824:23)\\n    at Parser.parseMaybeUnaryOrPrivate (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12615:61)\\n    at Parser.parseExprOps (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12622:23)\\n    at Parser.parseMaybeConditional (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12592:23)\\n    at Parser.parseMaybeAssign (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12544:21)\\n    at Parser.parseExpressionBase (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12480:23)\\n    at C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12474:39\\n    at Parser.allowInAnd (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:14570:16)\\n    at Parser.parseExpression (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:12474:17)\\n    at Parser.parseStatementContent (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:15014:23)\\n    at Parser.parseStatement (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:14871:17)\\n    at Parser.parseBlockOrModuleBlockBody (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:15531:25)\\n    at Parser.parseBlockBody (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:15522:10)\\n    at Parser.parseProgram (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:14785:10)\\n    at Parser.parseTopLevel (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:14772:25)\\n    at Parser.parse (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:16799:10)\\n    at parse (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\parser\\\\lib\\\\index.js:16851:38)\\n    at parser (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\parser\\\\index.js:52:34)\\n    at parser.next (<anonymous>)\\n    at normalizeFile (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\transformation\\\\normalize-file.js:87:38)\\n    at normalizeFile.next (<anonymous>)\\n    at run (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\transformation\\\\index.js:31:50)\\n    at run.next (<anonymous>)\\n    at transform (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\@babel\\\\core\\\\lib\\\\transform.js:29:41)\\n    at transform.next (<anonymous>)\\n    at step (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\gensync\\\\index.js:261:32)\\n    at C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\gensync\\\\index.js:273:13\\n    at async.call.result.err.err (C:\\\\Users\\\\Adria\\\\Projects\\\\node_modules\\\\gensync\\\\index.js:223:11)\");\n\n//# sourceURL=webpack://wordpress/./wp-content/themes/dcbase/assets/src/js/bundle.js?");
 
 /***/ }),
 
@@ -44,74 +23,38 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*!**************************************************************!*\
   !*** ./wp-content/themes/dcbase/assets/src/scss/styles.scss ***!
   \**************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://wordpress/./wp-content/themes/dcbase/assets/src/scss/styles.scss?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
+/******/ 	!function() {
 /******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
+/******/ 		__webpack_require__.r = function(exports) {
 /******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	})();
+/******/ 	}();
 /******/ 	
 /************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	__webpack_require__("./wp-content/themes/dcbase/assets/src/js/bundle.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./wp-content/themes/dcbase/assets/src/scss/styles.scss");
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	__webpack_modules__["./wp-content/themes/dcbase/assets/src/js/bundle.js"](0, {}, __webpack_require__);
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./wp-content/themes/dcbase/assets/src/scss/styles.scss"](0, __webpack_exports__, __webpack_require__);
 /******/ 	
 /******/ })()
 ;
