@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Path config
-const themePath = './wp-content/themes/dcbase/assets/';
+const themePath = './wp-content/themes/dctest/assets/';
 const webpPathConfig = {
 	path : path.resolve(__dirname),
 	src : {

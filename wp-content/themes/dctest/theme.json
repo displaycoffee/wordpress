@@ -10,12 +10,12 @@
 		{
 			"area": "header",
 			"name": "header",
-			"title": "Header"
+			"title": "Header - Main"
 		},
 		{
-			"area": "uncategorized",
-			"name": "test",
-			"title": "Test"
+			"area": "header",
+			"name": "header-index",
+			"title": "Header - Index"
 		}
 	]
 }
