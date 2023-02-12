@@ -1,11 +1,7 @@
 {
 	"version": 2,
-	"settings": {
-		"appearanceTools": true,
-		"color": {},
-		"layout": {},
-        "typography": {} 
-	},
+	"settings": {},
+    "styles": {},
 	"templateParts": [
 		{
 			"area": "header",
@@ -16,6 +12,11 @@
 			"area": "header",
 			"name": "header-index",
 			"title": "Header - Index"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
 		}
 	]
 }

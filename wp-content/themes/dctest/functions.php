@@ -14,9 +14,6 @@
 
 	if ( ! function_exists( 'dctest_support' ) ) {
 		function dctest_support()  {
-			// Adding support for core block visual styles
-			add_theme_support( 'wp-block-styles' );
-
 			// Enqueue editor styles
 			add_editor_style( 'style.css' );
 		}
@@ -29,3 +26,20 @@
 		wp_enqueue_script( $config->prefix . '-bundle', $config->paths->js . '/bundle.js', array(), $config->version, true );
 	}
 	add_action( 'wp_enqueue_scripts', function() use ( $config ) { dctest_scripts( $config ); } );
+
+	function prefix_remove_core_block_styles() {
+		wp_dequeue_style( 'wp-block-library' );
+		wp_dequeue_style( 'wp-block-library-theme' );
+		wp_dequeue_style( 'wc-block-styles' ); // REMOVE WOOCOMMERCE BLOCK CSS
+		wp_dequeue_style( 'global-styles' ); // REMOVE THEME.JSON
+		wp_dequeue_style('core-block-supports');
+
+		global $wp_styles;
+	
+		foreach ( $wp_styles->queue as $key => $handle ) {
+			if ( strpos( $handle, 'wp-block-' ) === 0 ) {
+				wp_dequeue_style( $handle );
+			}
+		}
+	}
+	add_action( 'wp_enqueue_scripts', 'prefix_remove_core_block_styles' );
