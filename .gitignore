@@ -35,5 +35,7 @@ wp-content/themes/*
 
 # WP Content - Themes - Custom
 
+!wp-content/themes/dcbase/
+!wp-content/themes/dcbase/**/
 !wp-content/themes/dctest/
 !wp-content/themes/dctest/**/
