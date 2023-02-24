@@ -1,26 +1,27 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-// Path config
-function bigFunction(name) {
-	const themePath = './wp-content/themes/' + name +'/assets/';
+// Function to build shared webpack settings
+function buildWebpackConfig(folder, name) {
+	// Path config
+	const themePath = `./wp-content/${folder}/${name}/assets/`;
 	const webpPathConfig = {
 		path : path.resolve(__dirname),
 		src : {
-			js : themePath + 'src/js/bundle.js',
-			css : themePath + 'src/scss/styles.scss',
-			fonts : themePath + 'src/fonts/[name][ext]',
-			images : themePath + 'src/images/[name][ext]'
+			js : `${themePath}src/js/bundle.js`,
+			css : `${themePath}src/scss/styles.scss`,
+			fonts : `${themePath}src/fonts/[name][ext]`,
+			images : `${themePath}src/images/[name][ext`,
 		},
 		dist : {
-			js : themePath + 'dist/js/bundle.js',
-			css : themePath + 'dist/css/styles.css',
-			fonts : themePath + 'dist/fonts/[name][ext]',
-			images : themePath + 'dist/images/[name][ext]'	
+			js : `${themePath}dist/js/bundle.js`,
+			css : `${themePath}dist/css/styles.css`,
+			fonts : `${themePath}dist/fonts/[name][ext]`,
+			images : `${themePath}dist/images/[name][ext]`,
 		}	
 	};
 	
-	// Common config
+	// Common config - entry, output, plugins, and modules
 	const webpCommonConfig = {
 		entry: [webpPathConfig.src.js, webpPathConfig.src.css],
 		output: {
@@ -83,4 +84,4 @@ function bigFunction(name) {
 	return webpCommonConfig;
 }
 
-module.exports = [bigFunction('dctest'), bigFunction('dcbase')];
+module.exports = [buildWebpackConfig('themes', 'dctest'), buildWebpackConfig('themes', 'dcbase')];

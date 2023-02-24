@@ -6,4 +6,10 @@ const webpProdConfig = {
 	mode: 'production'
 };
 
-module.exports = merge(webpCommonConfig, webpProdConfig);
+// Create exports array
+let webpExports = [];
+for (var i = 0; i < webpCommonConfig.length; i++) {
+	webpExports.push(merge(webpCommonConfig[i], webpProdConfig));
+}
+
+module.exports = webpExports;
