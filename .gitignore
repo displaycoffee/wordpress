@@ -37,3 +37,5 @@ wp-content/themes/*
 
 !wp-content/themes/dcbase/
 !wp-content/themes/dcbase/**/
+!wp-content/themes/dctest/
+!wp-content/themes/dctest/**/

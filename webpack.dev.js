@@ -1,25 +1,26 @@
 const { merge } = require('webpack-merge');
 const webpCommonConfig = require('./webpack.common.js');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const historyApiFallback = require('connect-history-api-fallback');
 
-// Dev config
+// Development config
 const webpDevConfig = {
 	mode: 'development'
 };
 
 // Add browserstack for dev testing 
-webpCommonConfig.plugins.push(
-	new BrowserSyncPlugin({
+const webpPluginsConfig = {
+	plugins: [new BrowserSyncPlugin({
 		host: 'localhost',
 		port: 3333,
-		files: ['wp-content/themes/**/*.php'],
-		proxy: 'http://localhost/wordpress',
-		server: {
-			baseDir: webpCommonConfig.output.path,
-			middleware: [historyApiFallback()],
-		},
-	})
-);
+		files: ['wp-content/themes/**/*.php', 'wp-content/themes/**/*.html'],
+		proxy: 'http://localhost/wordpress'
+	})]
+}
 
-module.exports = merge(webpCommonConfig, webpDevConfig);
+// Create exports array
+let webpExports = [];
+for (var i = 0; i < webpCommonConfig.length; i++) {
+	webpExports.push(merge(webpCommonConfig[i], webpDevConfig, webpPluginsConfig));
+}
+
+module.exports = webpExports;
