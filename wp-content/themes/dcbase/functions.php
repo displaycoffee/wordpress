@@ -7,7 +7,7 @@
 	if ( !defined( 'ABSPATH' ) ) { exit; }
 
 	// Include extra function files
-	require_once( 'includes/config.php' );
+	require_once( 'inc/config.php' );
 
 	// Add config object as variable
 	$config = dcbase_config();
