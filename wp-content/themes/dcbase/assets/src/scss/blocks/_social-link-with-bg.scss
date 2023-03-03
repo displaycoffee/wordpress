@@ -1,3 +1,10 @@
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
+
+//// ARCHIVES
+//// --------------------------------------------------------------------------
+
 .wp-social-link {
 	background-color: #f0f0f0;
 	color: #444;

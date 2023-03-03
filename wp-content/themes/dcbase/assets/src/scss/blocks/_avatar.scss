@@ -1,11 +1,15 @@
-.wp-block-avatar {
-	// This block has customizable padding, border-box makes that more predictable.
-	box-sizing: border-box;
-	img {
-		box-sizing: border-box;
-	}
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
 
-	&.aligncenter {
-		text-align: center;
+//// AVATAR
+//// --------------------------------------------------------------------------
+
+.wp-block-avatar {
+	&.aligncenter {}
+	&.alignright {}
+	img {}
+    a {
+		img {}
 	}
 }

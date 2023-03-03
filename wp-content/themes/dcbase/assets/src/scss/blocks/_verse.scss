@@ -1,3 +1,10 @@
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
+
+//// ARCHIVES
+//// --------------------------------------------------------------------------
+
 pre.wp-block-verse {
 	overflow: auto;
 	white-space: pre-wrap;

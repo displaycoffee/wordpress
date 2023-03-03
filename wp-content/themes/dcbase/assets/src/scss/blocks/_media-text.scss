@@ -1,3 +1,10 @@
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
+
+//// ARCHIVES
+//// --------------------------------------------------------------------------
+
 .wp-block-media-text {
 	// This block's direction should not be manipulated by rtl, as the mediaPosition control does.
 	/*!rtl:begin:ignore*/

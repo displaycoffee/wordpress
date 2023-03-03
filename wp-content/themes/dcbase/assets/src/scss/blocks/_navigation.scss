@@ -1,3 +1,10 @@
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
+
+//// ARCHIVES
+//// --------------------------------------------------------------------------
+
 // Navigation block and menu item styles.
 // These styles also affect the Page List block when used inside your navigation block.
 //

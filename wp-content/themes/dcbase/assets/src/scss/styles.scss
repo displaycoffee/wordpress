@@ -1,5 +1,15 @@
+//// BASE STYLES
+
 @use 'components/_normalize';
 @use 'components/_typography';
 //@use 'components/_icons-font';
 @use 'components/_icons-svg';
 @use 'components/_base';
+
+//// WORDPRESS BLOCK STYLES
+
+@use 'blocks/_archives';
+@use 'blocks/_audio';
+@use 'blocks/_avatar';
+@use 'blocks/_button';
+@use 'blocks/_buttons';

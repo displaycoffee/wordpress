@@ -1,3 +1,10 @@
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
+
+//// ARCHIVES
+//// --------------------------------------------------------------------------
+
 .wp-block-table {
 	$subtle-light-gray: #f3f4f5;
 	$subtle-pale-green: #e9fbe5;

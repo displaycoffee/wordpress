@@ -1,3 +1,10 @@
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
+
+//// ARCHIVES
+//// --------------------------------------------------------------------------
+
 // The Page List block should inherit navigation styles when nested within it
 .wp-block-navigation {
 	.wp-block-page-list {

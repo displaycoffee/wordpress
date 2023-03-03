@@ -1,10 +1,18 @@
-.wp-block-archives {
-	// This block has customizable padding, border-box makes that more predictable.
-	box-sizing: border-box;
-}
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
 
-.wp-block-archives-dropdown {
-	label {
-		display: block;
+//// ARCHIVES
+//// --------------------------------------------------------------------------
+
+.wp-block-archives {
+	&.wp-block-archives-list {
+		li {
+			a {}
+		}
+	}
+	&.wp-block-archives-dropdown {
+		.wp-block-archives__label {}
+		select {}
 	}
 }

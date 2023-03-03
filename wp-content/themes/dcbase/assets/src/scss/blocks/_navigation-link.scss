@@ -1,3 +1,10 @@
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
+
+//// ARCHIVES
+//// --------------------------------------------------------------------------
+
 // Navigation item styles.
 // Contains styles only that are unique to the manually inserted menu item.
 // Styles in the Navigation block itself target both custom menu items, and

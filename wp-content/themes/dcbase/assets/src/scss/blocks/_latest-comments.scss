@@ -1,3 +1,10 @@
+// Use helpers and theme variables
+@use '../helpers/_mixins';
+@use '../theme/_theme';
+
+//// ARCHIVES
+//// --------------------------------------------------------------------------
+
 // Lower specificity - target list element.
 ol.wp-block-latest-comments {
 	// Removes left spacing in Customizer Widgets screen.
