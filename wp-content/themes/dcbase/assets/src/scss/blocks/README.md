@@ -9,31 +9,32 @@
 
 ## B
 
-* block
-  * *No styles.*
-* button
 * buttons
+  * buttons
+  * button
 
 ## C
 
 * calendar
 * categories
 * code
-* column
 * columns
-* comment-author-avatar
-* comment-author-name
-* comment-content
-* comment-date
-* comment-edit-link
-* comment-reply-link
-* comment-template
-* comments-pagination-next
-* comments-pagination-numbers
-* comments-pagination-previous
-* comments-pagination
-* comments-title
+  * columns
+  * column
 * comments
+  * comments
+  * comments-pagination
+    * comments-pagination-previous
+    * comments-pagination-next
+    * comments-pagination-numbers
+  * comment-template
+    * comment-author-avatar
+    * comment-author-name
+    * comment-date
+    * comment-edit-link
+    * comment-content
+    * comment-reply-link
+  * comments-title
 * cover
 
 ## D
@@ -105,10 +106,7 @@
 * post-author-biography
 * post-author-name
 * post-author
-* post-comment
-* post-comments-count
 * post-comments-form
-* post-comments-link
 * post-content
 * post-date
 * post-excerpt

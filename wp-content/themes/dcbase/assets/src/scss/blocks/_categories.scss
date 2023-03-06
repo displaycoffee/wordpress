@@ -2,19 +2,18 @@
 @use '../helpers/_mixins';
 @use '../theme/_theme';
 
-//// ARCHIVES
+//// CATEGORIES
 //// --------------------------------------------------------------------------
 
 .wp-block-categories {
-	// This block has customizable padding, border-box makes that more predictable.
-	box-sizing: border-box;
-
-	&.alignleft {
-		/*rtl:ignore*/
-		margin-right: 2em;
+	&.wp-block-categories-list {
+		.cat-item {
+			&:marker {}
+			a {}
+		}
 	}
-	&.alignright {
-		/*rtl:ignore*/
-		margin-left: 2em;
+	&.wp-block-categories-dropdown {
+		label {}
+		select {}
 	}
 }
