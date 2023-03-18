@@ -48,7 +48,6 @@
 ## F
 
 * file
-* freeform
 
 ## G
 
@@ -58,7 +57,6 @@
 ## H
 
 * heading
-* html
 
 ## I
 

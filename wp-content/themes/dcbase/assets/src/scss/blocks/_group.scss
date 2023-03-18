@@ -2,10 +2,7 @@
 @use '../helpers/_mixins';
 @use '../theme/_theme';
 
-//// ARCHIVES
+//// GROUP
 //// --------------------------------------------------------------------------
 
-.wp-block-group {
-	// This block has customizable padding, border-box makes that more predictable.
-	box-sizing: border-box;
-}
+.wp-block-group {}

@@ -2,16 +2,9 @@
 @use '../helpers/_mixins';
 @use '../theme/_theme';
 
-//// ARCHIVES
+//// HEADING
 //// --------------------------------------------------------------------------
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	&.has-background {
-		padding: $block-bg-padding--v $block-bg-padding--h;
-	}
+h1, h2, h3, h4, h5, h6 {
+	&.has-background {}
 }
