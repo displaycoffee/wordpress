@@ -1,182 +1,179 @@
 # WORDPRESS BLOCKS
+
 [Library source](https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src)
 
 ## A
 
-* archives
-* audio
-* avatar
+-   archives
+-   audio
+-   avatar
 
 ## B
 
-* buttons
-  * buttons
-  * button
+-   buttons
+    -   buttons
+    -   button
 
 ## C
 
-* calendar
-* categories
-* code
-* columns
-  * columns
-  * column
-* comments
-  * comments
-  * comments-pagination
-    * comments-pagination-previous
-    * comments-pagination-next
-    * comments-pagination-numbers
-  * comment-template
-    * comment-author-avatar
-    * comment-author-name
-    * comment-date
-    * comment-edit-link
-    * comment-content
-    * comment-reply-link
-  * comments-title
-* cover
+-   calendar
+-   categories
+-   code
+-   columns
+    -   columns
+    -   column
+-   comments
+    -   comments
+    -   comments-pagination
+        -   comments-pagination-previous
+        -   comments-pagination-next
+        -   comments-pagination-numbers
+    -   comment-template
+        -   comment-author-avatar
+        -   comment-author-name
+        -   comment-date
+        -   comment-edit-link
+        -   comment-content
+        -   comment-reply-link
+    -   comments-title
+-   cover
 
 ## D
 
-* *No blocks.*
+-   _No blocks._
 
 ## E
 
-* embed
+-   embed
 
 ## F
 
-* file
+-   file
 
 ## G
 
-* gallery
-* group
+-   gallery
+-   group
 
 ## H
 
-* heading
+-   heading
 
 ## I
 
-* image
+-   image
 
 ## J
 
-* *No blocks.*
+-   _No blocks._
 
 ## K
 
-* *No blocks.*
+-   _No blocks._
 
 ## L
 
-* latest-comments
-* latest-posts
-* list-item
-* list
-* loginout
+-   latest-comments
+-   latest-posts
+-   loginout
 
 ## M
 
-* media-text
-* missing
-* more
+-   media-text
 
 ## N
 
-* navigation-link
-* navigation-submenu
-* navigation
-* nextpage
+-   navigation-link
+-   navigation-submenu
+-   navigation
+-   nextpage
 
 ## O
 
-* *No blocks.*
+-   _No blocks._
 
 ## P
 
-* page-list-item
-* page-list
-* paragraph
-* pattern
-* post-author-biography
-* post-author-name
-* post-author
-* post-comments-form
-* post-content
-* post-date
-* post-excerpt
-* post-featured-image
-* post-navigation-link
-* post-template
-* post-terms
-* post-time-to-read
-* post-title
-* preformatted
-* pullquote
+-   page-list-item
+-   page-list
+-   paragraph
+-   pattern
+-   post-author-biography
+-   post-author-name
+-   post-author
+-   post-comments-form
+-   post-content
+-   post-date
+-   post-excerpt
+-   post-featured-image
+-   post-navigation-link
+-   post-template
+-   post-terms
+-   post-time-to-read
+-   post-title
+-   preformatted
+-   pullquote
 
 ## Q
 
-* query-no-results
-* query-pagination-next
-* query-pagination-numbers
-* query-pagination-previous
-* query-pagination
-* query-title
-* query
-* quote
+-   query-no-results
+-   query-pagination-next
+-   query-pagination-numbers
+-   query-pagination-previous
+-   query-pagination
+-   query-title
+-   query
+-   quote
 
 ## R
 
-* read-more
-* rss
+-   read-more
+-   rss
 
 ## S
 
-* search
-* separator
-* shortcode
-* site-logo
-* site-tagline
-* site-title
-* social-link-with-bg
-* social-link-without-bg
-* social-link
-* social-links
-* spacer
+-   search
+-   separator
+-   shortcode
+-   site-logo
+-   site-tagline
+-   site-title
+-   social-link-with-bg
+-   social-link-without-bg
+-   social-link
+-   social-links
+-   spacer
 
 ## T
 
-* table-of-contents
-* table
-* tag-cloud
-* template-part
-* term-description
-* text-columns
+-   table-of-contents
+-   table
+-   tag-cloud
+-   template-part
+-   term-description
+-   text-columns
 
 ## U
 
-* utils
+-   utils
 
 ## V
 
-* verse
-* video
+-   verse
+-   video
 
 ## W
 
-* *No blocks.*
+-   _No blocks._
 
 ## X
 
-* *No blocks.*
+-   _No blocks._
 
 ## Y
 
-* *No blocks.*
+-   _No blocks._
 
 ## Z
 
-* *No blocks.*
+-   _No blocks._

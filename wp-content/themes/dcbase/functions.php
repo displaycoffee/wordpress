@@ -32,7 +32,7 @@
 		wp_dequeue_style( 'wp-block-library-theme' );
 		wp_dequeue_style( 'wc-block-styles' ); // REMOVE WOOCOMMERCE BLOCK CSS
 		wp_dequeue_style( 'global-styles' ); // REMOVE THEME.JSON
-		wp_dequeue_style('core-block-supports');
+		wp_dequeue_style( 'core-block-supports' );
 
 		global $wp_styles;
 	
