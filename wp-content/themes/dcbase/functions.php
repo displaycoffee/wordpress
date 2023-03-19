@@ -13,17 +13,17 @@
 	$config = dcbase_config();
 
 	if ( ! function_exists( 'dcbase_support' ) ) {
-		function dcbase_support()  {
+		function dcbase_support( $config )  {
 			// Enqueue editor styles
-			add_editor_style( 'style.css' );
+			add_editor_style( $config->paths->css . '/styles.css' );
 		}
-		add_action( 'after_setup_theme', 'dcbase_support' );
+		add_action( 'after_setup_theme', function() use ( $config ) { dcbase_support( $config ); } );
 	}
 
 	// Enqueue scripts and styles
 	function dcbase_scripts( $config ) {
-		wp_enqueue_style( $config->prefix . '-styles', $config->paths->css . '/styles.css', array(), $config->version );
-		wp_enqueue_script( $config->prefix . '-bundle', $config->paths->js . '/bundle.js', array(), $config->version, true );
+		wp_enqueue_style( $config->prefix . '-styles', $config->paths->css . '/styles.css', array() );
+		wp_enqueue_script( $config->prefix . '-bundle', $config->paths->js . '/bundle.js', array(), '', true );
 	}
 	add_action( 'wp_enqueue_scripts', function() use ( $config ) { dcbase_scripts( $config ); } );
 

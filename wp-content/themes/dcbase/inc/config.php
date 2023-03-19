@@ -34,8 +34,7 @@
 				'results' => 'Search results for:',
 				'text'    => 'Search'
 			],
-			'type'    => 'page',
-			'version' =>  wp_get_theme()->get( 'Version' )
+			'type'    => 'page'
 		];
 
 		// // Check what type of page it is and assign page type
